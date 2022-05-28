@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+
+<style>
+body{
+    background-color: black;
+}
+.mySlides
+{
+margin-top: 20px;
+}
+#navbar {
+    overflow: hidden;
+    background-color: #010101;
+  }
+  
+  /* Style the links inside the navigation bar */
+  #navbar a {
+    float: right;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+.row
+{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.col
+{
+    margin:10px;
+    float:left;
+  margin-bottom: 16px;
+  padding: 10px;
+  width:40%;
+  display: flex;
+  border-radius: 50px;
+   overflow: hidden;
+   background: rgba(255, 255, 255, 0.10);
+   backdrop-filter: blur(2px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-right-color: rgba(255, 255, 255, 0.1);
+   border-bottom-color: rgba(255, 255, 255, 0.1);
+   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+   padding: 40px;
+ 
+}
+.card {
+
+    float:left;
+    width:50%;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+  padding: 5px;
+}
+.capt {
+    float:left;
+    width:50%;
+  padding: 0 16px;
+  color: #ffffff;
+}
+.cont::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    margin: 0;
+    border-radius: 100px;
+  }
+  .search button {
+    margin: 0;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  .search button:hover {
+    background: #ccc;
+  }
+.search
+{
+    margin:20px;
+    text-align: center;
+    overflow: hidden;
+}
+.abt
+{
+    
+   background: rgba(255, 255, 255, 0.10);
+   backdrop-filter: blur(2px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-right-color: rgba(255, 255, 255, 0.1);
+   border-bottom-color: rgba(255, 255, 255, 0.1);
+   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color:aliceblue;
+    line-height: 1.5;
+    padding:20px;
+    margin: 40px;
+    border-radius: 50px;
+}
+footer{
+    color:aliceblue;
+
+    background: rgba(255, 255, 255, 0.10);
+   backdrop-filter: blur(2px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-right-color: rgba(255, 255, 255, 0.1);
+   border-bottom-color: rgba(255, 255, 255, 0.1);
+   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+.contact
+{
+  border-top: 1px solid grey;
+    float:left;
+    width:50%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.med
+{
+  border-top: 1px solid grey;
+    float:left;
+    width:50%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+
+.scroll-up {
+    position: fixed;
+    right:1%;
+    bottom: 3%;
+    cursor:pointer;
+  }
+  .up-arrow {
+    width: 3rem;
+    height: 3rem;
+  }
+  .fa-edit
+  {
+    position: fixed;
+    right:1%;
+    bottom: 12%;
+    cursor:pointer;  
+  }
+  
+.about
+{
+  float: left;
+  color: #ddd;
+  text-align: center;
+  margin:auto;
+  border-top: 5px solid grey;
+  display:flex;
+}
+.abtext
+{
+  text-align: center;
+  padding: 100px;
+}
+.abtimg
+{
+  padding: 50px;
+}
+</style>
+<body>
+    <div id="navbar">
+
+        <a href="home.html" style="float: left;">Blahblah</a>
+        <a href="{{ url_for('index') }}"> <i class="fa fa-user-circle" style="font-size:20px;"></i></a>
+        <a href="reg.html" >Registrations</a>
+        <a href="recomm.html" >Recommendations</a>
+<a href="trending.html" >Trending</a>
+
+
+      </div>
+
+
+      <div class="w3-content w3-section"></div>
+                     <img class="mySlides" src='img1.jpg' style="width:100%;height:500px; object-fit:cover;">
+                        <img class="mySlides" src="img2.jpg" style="width:100%;height:500px; object-fit:cover;">
+                     <img class="mySlides" src="img3.jpg" style="width:100%;height:500px; object-fit:cover;">
+
+                     <br><br>
+
+   <!--
+<div class="search">
+    <input type="text" placeholder="&nbsp;&nbsp;Search" >
+    <button type="submit"><i class="fa fa-search" style="font-size:20px; padding:5px;"></i></button>
+</div>
+-->
+
+<div class="abt">
+<h1>ABOUT</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, harum natus necessitatibus dolores fuga, doloribus sunt eius id exercitationem perferendis impedit cumque unde ea alias deserunt voluptas mollitia? Dolore, obcaecati?</p>
+<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>
+</div>
+<div class="about">
+   <div class="abtext">
+ <h1>One-stop website for all club related events in VIT</h1><br>
+ <h2>VIT clubs and chapters now with a new look- Enjoy a seamless experience.</h2>
+ <h2>Resgister, Participate, Learn</h2>
+</div>
+<div class="abtimg">
+ <img  src='img1.jpg' style="max-width: 500px;height:auto;object-fit: cover;">
+</div>
+</div>
+
+
+<div class="about">
+ <div class="abtimg">
+    <img src="img1.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
+   </div>
+ <div class="abtext">
+<h1>Student friendly website for all VITians</h1><br>
+<h2>Get Recommendations according to favourite topics and fields.</h2>
+</div>
+
+</div>
+
+
+<div class="about">
+<div class="abtext">
+<h1>With New Features!</h1><br>
+<h2>View Trending Events, Explore and Discover new Topics.</h2>
+</div>
+<div class="abtimg">
+<img src="img1.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
+</div>
+</div>
+
+
+
+<div class="about">
+<div class="abtimg">
+<img src="img1.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
+</div>
+<div class="abtext">
+<h1>Publish and Popularize Your Events </h1><br>
+<h2>Clubs can now post their upcoming events, get participants and process feedback </h2>
+<h2>All in their very own page!</h2>
+</div>
+</div>
+
+
+<footer>
+    <div class="contact">
+    <h2>Contacts:</h2>
+    <p style="line-height: 1.5;">Email:<br>JohnDoe@gmail.com<br>
+        <br>
+    Phone :<br>917862838<br>911342838<br>923462838</p>
+ </div>
+ <div class="med">
+     <div style="padding: 40px;">
+ <h2 >Our Social Media Handles:</h2><br>
+ <a href="#" class="fa fa-facebook" style="font-size: 30px; color: aliceblue;text-decoration:none;"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="#" class="fa fa-instagram" style="font-size: 30px;color: aliceblue;text-decoration:none;"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="#" class="fa fa-github" style="font-size: 30px;color: aliceblue; text-decoration:none;"></a>&nbsp;&nbsp;
+</div>
+</div>
+ </footer>
+
+ <i class="fa fa-arrow-up scroll-up" id="scroll-up"  style="font-size:36px; background-color: aliceblue; color:black;border-radius: 50%;"></i>
+<a href="edit.html"><i class="fa fa-edit" style="color: aliceblue;font-size:36px;"></i></a>
+<script>
+    //scroll to top
+    const scrollUp = document.querySelector("#scroll-up");
+
+scrollUp.addEventListener("click", () => {
+window.scrollTo({
+   top: 0,
+   left: 0,
+   behavior: "smooth",
+});
+});
+
+
+
+
+
+var myIndex = 0;
+                           carousel();
+
+                           function carousel() {
+                           var i;
+                           var x = document.getElementsByClassName("mySlides");
+                           for (i = 0; i < x.length; i++) {
+                              x[i].style.display = "none";  
+                           }
+                           myIndex++;
+                           if (myIndex > x.length) {myIndex = 1}    
+                           x[myIndex-1].style.display = "block";  
+                           setTimeout(carousel, 2000); // Change image every 2 seconds
+                           }
+                        
+</script>
+
+</body>
+</html>
