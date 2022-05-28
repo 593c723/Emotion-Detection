@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <title>Documentation</title>
+</head>
+<body>
+ <div id="navbar">
+
+        <a href="{{ url_for('home') }}" style="float: left;">EMOTE</a>
+        <a href="{{ url_for('index') }}"> <i class="fa fa-user-circle" style="font-size:20px;"></i></a>
+        <a href="home.html" >Documentation</a>
+        <a href="home.html" >Video</a>
+ </div>
+
+'''  print('GENRE ALLOCATED IS DRAMA')
+                        urlhere = 'http://www.imdb.com/search/title?genres=drama&title_type=feature&sort=moviemeter, asc'
+
+                        response = HTTP.get(urlhere)
+                        data = response.text
+                        soup = SOUP(data, "lxml")
+                        # Extract movie titles from the
+                        # data using regex
+                        title = soup.find_all("a", attrs={"href": re.compile(r'\/title\/tt+\d*\/')})
+                        title1 = soup.find_all("h3", {"class": "lister-item-header"})
+                        rating = soup.find_all("div", {"class": "inline-block ratings-imdb-rating"})
+                        import tkinter
+                        from tkinter import ttk
+
+                        root12 = tkinter.Tk()
+                        root12.geometry("600x600")
+                        root12.title("MOVIES RECOMMENDED FOR DETECTED EMOTION")
+                        tree = ttk.Treeview(root12)
+                        tree["columns"] = ("one", "two")
+                        tree.column("one", width=200)
+                        tree.column("two", width=200)
+
+                        style = ttk.Style(root12)
+                        style.configure('Treeview', rowheight=45)
+
+                        tree.heading("one", text="MOVIES")
+                        tree.heading("two", text="RATINGS")
+                        for i in range(9, -1, -1):
+                            tree.insert("", 0, text="", values=(title1[i].text, rating[i].text))
+                        tree.pack()
+
+                        return title1
+                        '''
+
+
+</body>
+</html>
