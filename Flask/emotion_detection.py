@@ -7,6 +7,9 @@ import webbrowser
 import cv2
 import numpy as np
 from scipy import stats
+import time
+import os, random
+import subprocess
 
 app = Flask(__name__, template_folder='./templates')
 
@@ -19,7 +22,10 @@ capture=0
 url = 'https://www.youtube.com/results?search_query='
 chrome_path = "C:/Program Files/Google/Chrome/Application/chrome.exe %s"
 playlist = ''
-    
+
+now = time.time()
+future=now+10
+
 def gen_frames():
     global capture
     count = 0
@@ -51,27 +57,79 @@ def gen_frames():
         if success: 
             if(capture):
                 capture=0
-                if mode[0][0] == 'Neutral':
-                    playlist = 'neutral+songs'
-                    webbrowser.get(chrome_path).open(url+playlist)
-                elif mode[0][0] == 'Happiness':
-                    playlist = 'happy+songs'
-                    webbrowser.get(chrome_path).open(url+playlist)
-                elif mode[0][0] == 'Angry':
-                    playlist = 'angry+songs'
-                    webbrowser.get(chrome_path).open(url+playlist)
-                elif mode[0][0] == 'Sad':
-                    playlist = 'sad+songs playlist'
-                    webbrowser.get(chrome_path).open(url+playlist)
-                elif mode[0][0] == 'Disgust':
-                    playlist = 'disgust+songs'
-                    webbrowser.get(chrome_path).open(url+playlist)
-                elif mode[0][0] == 'Fear':
-                    playlist = 'fear+songs'
-                    webbrowser.get(chrome_path).open(url+playlist)
-                else:
-                    playlist = 'surprise+songs'
-                    webbrowser.get(chrome_path).open(url+playlist)
+                if time.time() > future:
+                    if mode[0][0] == 'Neutral':
+                        mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
+                        randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        print('You are angry !!!! please calm down:) ,I will play song for you :' + randomfile)
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+
+                        playlist = 'neutral+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    elif mode[0][0] == 'Happiness':
+                        mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        print('You are angry !!!! please calm down:) ,I will play song for you :' + randomfile)
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+
+                        playlist = 'happy+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    elif mode[0][0] == 'Angry':
+
+                        mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        print('You are angry !!!! please calm down:) ,I will play song for you :' + randomfile)
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+
+
+                        playlist = 'angry+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    elif mode[0][0] == 'Sad':
+
+                        mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        print('You are angry !!!! please calm down:) ,I will play song for you :' + randomfile)
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+
+                        playlist = 'sad+songs playlist'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    elif mode[0][0] == 'Disgust':
+                        mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        print('You are angry !!!! please calm down:) ,I will play song for you :' + randomfile)
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+
+                        playlist = 'disgust+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    elif mode[0][0] == 'Fear':
+                        mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        print('You are angry !!!! please calm down:) ,I will play song for you :' + randomfile)
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+
+                        playlist = 'fear+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    else:
+                        mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        print('You are angry !!!! please calm down:) ,I will play song for you :' + randomfile)
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+
+                        playlist = 'surprise+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
             try:
                 
                 ret, buffer = cv2.imencode('.jpg', frame)

@@ -190,12 +190,10 @@ footer{
 <body>
     <div id="navbar">
 
-        <a href="home.html" style="float: left;">Blahblah</a>
+        <a href="{{ url_for('home') }}" style="float: left;">EMOTE</a>
         <a href="{{ url_for('index') }}"> <i class="fa fa-user-circle" style="font-size:20px;"></i></a>
-        <a href="reg.html" >Registrations</a>
-        <a href="recomm.html" >Recommendations</a>
-<a href="trending.html" >Trending</a>
-
+        <a href="home.html" >Documentation</a>
+        <a href="home.html" >Video</a>
 
       </div>
 
@@ -207,23 +205,17 @@ footer{
 
                      <br><br>
 
-   <!--
-<div class="search">
-    <input type="text" placeholder="&nbsp;&nbsp;Search" >
-    <button type="submit"><i class="fa fa-search" style="font-size:20px; padding:5px;"></i></button>
-</div>
--->
 
 <div class="abt">
 <h1>ABOUT</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, harum natus necessitatibus dolores fuga, doloribus sunt eius id exercitationem perferendis impedit cumque unde ea alias deserunt voluptas mollitia? Dolore, obcaecati?</p>
-<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>
+<p>Emote is a webapp that recommends music according to the mood of the user using facial detection and emotion recognition. This project was built as a part of the Microsoft Mentor Engage Program and falls under the first problem set of Facial Recognition. This implements a machine learning model for emotion detection that is implemented over the facial detection module.</p>
+<p></p>
 </div>
 <div class="about">
    <div class="abtext">
- <h1>One-stop website for all club related events in VIT</h1><br>
- <h2>VIT clubs and chapters now with a new look- Enjoy a seamless experience.</h2>
- <h2>Resgister, Participate, Learn</h2>
+ <h1>Vibe to Your Emotion</h1><br>
+ <h2>Get your mood recognised with Emote's smart AI</h2>
+ <h2>No Typing Required, Enjoy a Hands Free Experience</h2>
 </div>
 <div class="abtimg">
  <img  src='../static/img4.jpg' style="max-width: 500px;height:auto;object-fit: cover;">
@@ -236,8 +228,8 @@ footer{
     <img src="../static/img4.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
    </div>
  <div class="abtext">
-<h1>Student friendly website for all VITians</h1><br>
-<h2>Get Recommendations according to favourite topics and fields.</h2>
+<h1>Vibe To Music</h1><br>
+<h2>Get Recommendations based on your emotions</h2>
 </div>
 
 </div>
@@ -245,8 +237,9 @@ footer{
 
 <div class="about">
 <div class="abtext">
-<h1>With New Features!</h1><br>
-<h2>View Trending Events, Explore and Discover new Topics.</h2>
+<h1>Experience Emotion</h1><br>
+<h2>With our Customized Playlist</h2>
+<h2> Tune in to music or let us take you to the most popular youtube playlists</h2>
 </div>
 <div class="abtimg">
 <img src="../static/img4.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
@@ -260,9 +253,9 @@ footer{
 <img src="../static/img4.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
 </div>
 <div class="abtext">
-<h1>Publish and Popularize Your Events </h1><br>
-<h2>Clubs can now post their upcoming events, get participants and process feedback </h2>
-<h2>All in their very own page!</h2>
+<h1>Let Us Be There For You </h1><br>
+<h2>At your very low and at your most exuberant </h2>
+
 </div>
 </div>
 
@@ -270,9 +263,9 @@ footer{
 <footer>
     <div class="contact">
     <h2>Contacts:</h2>
-    <p style="line-height: 1.5;">Email:<br>JohnDoe@gmail.com<br>
+    <p style="line-height: 1.5;">Email:<br>sumanasridharan@gmail.com<br>
         <br>
-    Phone :<br>917862838<br>911342838<br>923462838</p>
+    Phone :<br>7373786765<br></p>
  </div>
  <div class="med">
      <div style="padding: 40px;">
@@ -285,7 +278,7 @@ footer{
  </footer>
 
  <i class="fa fa-arrow-up scroll-up" id="scroll-up"  style="font-size:36px; background-color: aliceblue; color:black;border-radius: 50%;"></i>
-<a href="edit.html"><i class="fa fa-edit" style="color: aliceblue;font-size:36px;"></i></a>
+
 <script>
     //scroll to top
     const scrollUp = document.querySelector("#scroll-up");
