@@ -4,99 +4,57 @@
     <meta charset="UTF-8">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
     <title>Documentation</title>
+<style>
+    body {
+  background-image: url(../static/bg.jpg);
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: #010101;
+    background: rgba(255, 255, 255, 0.10);
+   backdrop-filter: blur(2px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-right-color: rgba(255, 255, 255, 0.1);
+   border-bottom-color: rgba(255, 255, 255, 0.1);
+   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style the links inside the navigation bar */
+  #navbar a {
+    float: right;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  /* Change the color of links on hover */
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+</style>
 </head>
 <body>
  <div id="navbar">
 
         <a href="{{ url_for('home') }}" style="float: left;">EMOTE</a>
-        <a href="{{ url_for('index') }}"> <i class="fa fa-user-circle" style="font-size:20px;"></i></a>
         <a href="home.html" >Documentation</a>
         <a href="home.html" >Video</a>
+
  </div>
-
-                    if mode[0][0] == 'Neutral':
-                        randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
-                        subprocess.call([mp, file])
-#thriller
-                        urlhere = 'http://www.imdb.com/search/title?genres=thriller&title_type=feature&sort=moviemeter, asc'
-                        webbrowser.get(chrome_path).open(urlhere)
-
-                        playlist = 'neutral+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-
-                    elif mode[0][0] == 'Happiness':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/" + randomfile)
-                        subprocess.call([mp, file])
-
-                        urlhere = 'http://www.imdb.com/search/title?genres=thriller&title_type=feature&sort=moviemeter, asc'
-                        webbrowser.get(chrome_path).open(urlhere)
-
-                        playlist = 'happy+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-
-                    elif mode[0][0] == 'Angry':
-                        randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/angry/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/angry/" + randomfile)
-                        subprocess.call([mp, file])
-                        # family
-                        urlhere = 'http://www.imdb.com/search/title?genres=family&title_type=feature&sort=moviemeter, asc'
-                        webbrowser.get(chrome_path).open(urlhere)
-
-
-                        playlist = 'angry+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-                    elif mode[0][0] == 'Sad':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/sad/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/sad/" + randomfile)
-                        subprocess.call([mp, file])
-
-                        urlhere = 'http://www.imdb.com/search/title?genres=drama&title_type=feature&sort=moviemeter, asc'
-                        webbrowser.get(chrome_path).open(urlhere)
-
-                        playlist = 'sad+songs playlist'
-                        webbrowser.get(chrome_path).open(url + playlist)
-
-
-
-                    elif mode[0][0] == 'Disgust':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/" + randomfile)
-                        subprocess.call([mp, file])
-
-                        urlhere = 'http://www.imdb.com/search/title?genres=musical&title_type=feature&sort=moviemeter, asc'
-                        webbrowser.get(chrome_path).open(urlhere)
-
-                        playlist = 'disgust+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-                    elif mode[0][0] == 'Fear':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
-                        subprocess.call([mp, file])
-#sports
-                        urlhere = 'http://www.imdb.com/search/title?genres=sport&title_type=feature&sort=moviemeter, asc'
-                        webbrowser.get(chrome_path).open(urlhere)
-
-                        playlist = 'fear+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-                    else:
-                        # Surprise: film noir
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/surprise/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/surprise/" + randomfile)
-                        subprocess.call([mp, file])
-
-                        urlhere = 'http://www.imdb.com/search/title?genres=film_noir&title_type=feature&sort=moviemeter, asc'
-                        webbrowser.get(chrome_path).open(urlhere)
-
-                        playlist = 'surprise+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-
-
+        <h1 style="color:white; text-align:center;">DOCUMENTATION</h1>
+<img src="../static/ss1.png" style="width: 100%;height:auto;object-fit: cover;">
+<img src="../static/ss2.png" style="width: 100%;height:auto;object-fit: cover;">
+<img src="../static/ss3.png" style="width: 100%;height:auto;object-fit: cover;">
+<img src="../static/ss4.png" style="width: 100%;height:auto;object-fit: cover;">
+<img src="../static/ss5.png" style="width: 100%;height:auto;object-fit: cover;">
+<img src="../static/ss6.png" style="width: 100%;height:auto;object-fit: cover;">
+<img src="../static/ss7.png" style="width: 100%;height:auto;object-fit: cover;">
+<img src="../static/ss8.png" style="width: 100%;height:auto;object-fit: cover;">
 </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/styles.css') }}">
     <title>Home</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
 
     <style>
         body{
@@ -185,7 +186,7 @@ background: rgba(255, 255, 255, 0.10);
 
         <a href="{{ url_for('home') }}" style="float: left;">EMOTE</a>
         <a href="{{ url_for('index') }}"> <i class="fa fa-user-circle" style="font-size:20px;"></i></a>
-        <a href="home.html" >Documentation</a>
+        <a href="{{ url_for('docs') }}"> Documentation</a>
         <a href="home.html" >Video</a>
 
       </div>
@@ -201,7 +202,9 @@ background: rgba(255, 255, 255, 0.10);
 
 <div class="abt">
 <h1>ABOUT</h1>
-<p>Emote is a webapp that recommends music according to the mood of the user using facial detection and emotion recognition. This project was built as a part of the Microsoft Mentor Engage Program and falls under the first problem set of Facial Recognition. This implements a machine learning model for emotion detection that is implemented over the facial detection module.</p>
+<p>Emote is a webapp that recommends music according to the mood of the user using facial detection and emotion recognition by classifying user moods into-Happy, Angry, Sad, Surprised, Disgusted, Neutral, Scared. This project was built as a part of the Microsoft Mentor Engage Program and falls under the first problem set of Facial Recognition. This implements a machine learning model for emotion detection that is implemented over the facial detection module.</p>
+
+<p>With the advancement in technology, it is only natural that techniques like Artificial intelligence and machine learning be applied to make life easier. One such instance is this project with Emotion recognition via face detection embedded in a smart recommendation system that suggests music, movies and playlists according to the users mood. A field with a lot of scope and future work possible, this Smart entertainment recommendation system has been built as a web application.</p>
 <p>Sometimes it so happens that all we want to do is lie back, listen to songs that irrevocably support and mesh with what we are feeling right then. Emote does just that. You dont need to do anything but open the webapp and enjoy the music!!</p>
 </div>
 <div class="about">
@@ -211,18 +214,18 @@ background: rgba(255, 255, 255, 0.10);
  <h2>No Typing Required, Enjoy a Hands Free Experience</h2>
 </div>
 <div class="abtimg">
- <img  src='../static/img1.jpg' style="width: 500px;height:auto;object-fit: cover;">
+ <img  src='../static/img5.jpg' style="width: 500px;height:auto;object-fit: cover;">
 </div>
 </div>
 
 
 <div class="about">
  <div class="abtimg">
-    <img src="../static/img4.jpg" style="width: 500px;height:auto;object-fit: cover;">
+    <img src="../static/img6.jpg" style="width: 500px;height:auto;object-fit: cover;">
    </div>
  <div class="abtext">
 <h1>Vibe To Music</h1><br>
-<h2>Get Recommendations based on your emotions</h2>
+<h2>Listen to music corresponding to your emotions</h2>
 </div>
 
 </div>
@@ -235,7 +238,7 @@ background: rgba(255, 255, 255, 0.10);
 <h2> Tune in to music or let us take you to the most popular youtube playlists</h2>
 </div>
 <div class="abtimg">
-<img src="../static/img4.jpg" style="width: 500px;height:auto;object-fit: cover;">
+<img src="../static/img7.jpg" style="width: 500px;height:auto;object-fit: cover;">
 </div>
 </div>
 
@@ -243,11 +246,12 @@ background: rgba(255, 255, 255, 0.10);
 
 <div class="about">
 <div class="abtimg">
-<img src="../static/img4.jpg" style="width: 500px;height:auto;object-fit: cover;">
+<img src="../static/img1.jpg" style="width: 500px;height:auto;object-fit: cover;">
 </div>
 <div class="abtext">
-<h1>Let Us Be There For You </h1><br>
-<h2>At your very low and at your most exuberant </h2>
+<h1>Let Us Be There For You ..</h1><br>
+    <h2>At your lowest and your most exuberant</h2>
+<h2>Get Movie Recommendations that suit your mood!! </h2>
 
 </div>
 </div>

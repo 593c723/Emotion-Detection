@@ -166,7 +166,9 @@ def home():
 def index():
     return render_template('index.html')
 
-
+@app.route('/docs')
+def docs():
+    return render_template('doc.html')
 
 
 @app.route('/face_detection')
