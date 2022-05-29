@@ -20,12 +20,14 @@ To create a web based application that recognises a users mood and recommends en
 
 
 MOTIVATION
+
 Emote has been developed using many machine learning algorithms including convolution neural networks (CNN) for a facial expression recognition task. The goal is to classify each facial image into one of the seven facial emotion categories considered in this study- Happy, Angry, Sad, Surprised, Disgusted, Neutral, Scared.  CNN models are trained with different depth using gray-scale images from the Kaggle website. This model can be trained in any python development environment. Visualization of different layers of a network is presented to show what features of a face can be learned by CNN models. This trained model is then passed into the main program which identifies the emotion in a live video stream input from the webcam and suggests corresponding entertainment options.
 USER CHARACTERISTICS AND EXPECTATIONS:
 Users should be internet literate and should be able to navigate the web.
 To run application in a development environment, users should have basic knowledge of python, working with importing libraries and basic web development knowledge to parse through the user interface design.
 
 FUNCTIONAL REQUIREMENTS:
+
 Landing Page
 Login for the user
 Face detection and Emotion Recognition via live stream
@@ -36,11 +38,13 @@ NON-FUNCTIONAL REQUIREMENTS:
 1)Usability:
 Users should be able to easily navigate the application, find the login icon easily and should also be able to figure out how to navigate to the web live streaming page
 Scroll to top must be available from all parts of the page
+
 2) Performance:
 Webcam must live stream the video without buffering or disturbances
 Emotion recognition must be prompt and must not have a delay of any more than 1ms.
 The recommendation must be available immediately after the user chooses a mode of entertainment.
 Application must work on and support major browsers like: Google chrome, Firefox and Microsoft Edge
+
 
 SYSTEM REQUIREMENTS
 
@@ -61,7 +65,9 @@ SYSTEM REQUIREMENTS
 3.3. Microsoft Edge 
 
 HARDWARE REQUIREMENTS:
+
 Webcam connected to the device
+
 
 SOFTWARE REQUIREMENTS:
 
@@ -84,6 +90,7 @@ GitHub code hosting platform for software development and version control using 
 **IMPLEMENTATION/ RUNNING THE PROGRAM:**
 
 TRAINING THE EMOTION RECOGNITION MODEL:
+
 This can be done by navigating to the “Model” directory and running emorecog.py.
 The pre-run output of the training is available in model_csv.h5 in the same directory.
 
@@ -99,6 +106,7 @@ Run the python file and navigate to http://127.0.0.1:5000 on the browser to open
 Before running the program make sure that all the local paths have been changed to the path on your device.
 
 Installations
+
 Follow steps to use this project:
 1)Clone repository
 git clone https://github.com/593c723/Emotion-Detection.git
@@ -116,16 +124,10 @@ cd Flask
 python emotion_detection.py
 
 FEATURES:
+
 Emotional Detection Model use Deep Neural Network with CNN architecture model for Image Classification.
 Tensorflow-Keras Convolutional Neural Network with multiple layers is used to train and test model for seven classes - Happy, Angry, Neutral, Sad, Surprise, Fear and Disgust.
 Emotional Detection Model integrated with OpenCV to capture user facial expression.
 Recommendations based on detected mood is done via 3 functions.
 Engaging UI is developed using Flask Web Application
-
-DESIGN:
-LANDING PAGE:
- 
- 
-LOGIN:
- 
 
