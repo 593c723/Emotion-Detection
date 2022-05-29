@@ -14,39 +14,88 @@
         <a href="home.html" >Video</a>
  </div>
 
-'''  print('GENRE ALLOCATED IS DRAMA')
+                    if mode[0][0] == 'Neutral':
+                        randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+#thriller
+                        urlhere = 'http://www.imdb.com/search/title?genres=thriller&title_type=feature&sort=moviemeter, asc'
+                        webbrowser.get(chrome_path).open(urlhere)
+
+                        playlist = 'neutral+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+
+                    elif mode[0][0] == 'Happiness':
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/"))
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/" + randomfile)
+                        subprocess.call([mp, file])
+
+                        urlhere = 'http://www.imdb.com/search/title?genres=thriller&title_type=feature&sort=moviemeter, asc'
+                        webbrowser.get(chrome_path).open(urlhere)
+
+                        playlist = 'happy+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+
+                    elif mode[0][0] == 'Angry':
+                        randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/angry/"))
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/angry/" + randomfile)
+                        subprocess.call([mp, file])
+                        # family
+                        urlhere = 'http://www.imdb.com/search/title?genres=family&title_type=feature&sort=moviemeter, asc'
+                        webbrowser.get(chrome_path).open(urlhere)
+
+
+                        playlist = 'angry+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    elif mode[0][0] == 'Sad':
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/sad/"))
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/sad/" + randomfile)
+                        subprocess.call([mp, file])
+
                         urlhere = 'http://www.imdb.com/search/title?genres=drama&title_type=feature&sort=moviemeter, asc'
+                        webbrowser.get(chrome_path).open(urlhere)
 
-                        response = HTTP.get(urlhere)
-                        data = response.text
-                        soup = SOUP(data, "lxml")
-                        # Extract movie titles from the
-                        # data using regex
-                        title = soup.find_all("a", attrs={"href": re.compile(r'\/title\/tt+\d*\/')})
-                        title1 = soup.find_all("h3", {"class": "lister-item-header"})
-                        rating = soup.find_all("div", {"class": "inline-block ratings-imdb-rating"})
-                        import tkinter
-                        from tkinter import ttk
+                        playlist = 'sad+songs playlist'
+                        webbrowser.get(chrome_path).open(url + playlist)
 
-                        root12 = tkinter.Tk()
-                        root12.geometry("600x600")
-                        root12.title("MOVIES RECOMMENDED FOR DETECTED EMOTION")
-                        tree = ttk.Treeview(root12)
-                        tree["columns"] = ("one", "two")
-                        tree.column("one", width=200)
-                        tree.column("two", width=200)
 
-                        style = ttk.Style(root12)
-                        style.configure('Treeview', rowheight=45)
 
-                        tree.heading("one", text="MOVIES")
-                        tree.heading("two", text="RATINGS")
-                        for i in range(9, -1, -1):
-                            tree.insert("", 0, text="", values=(title1[i].text, rating[i].text))
-                        tree.pack()
+                    elif mode[0][0] == 'Disgust':
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/"))
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/" + randomfile)
+                        subprocess.call([mp, file])
 
-                        return title1
-                        '''
+                        urlhere = 'http://www.imdb.com/search/title?genres=musical&title_type=feature&sort=moviemeter, asc'
+                        webbrowser.get(chrome_path).open(urlhere)
+
+                        playlist = 'disgust+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    elif mode[0][0] == 'Fear':
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        subprocess.call([mp, file])
+#sports
+                        urlhere = 'http://www.imdb.com/search/title?genres=sport&title_type=feature&sort=moviemeter, asc'
+                        webbrowser.get(chrome_path).open(urlhere)
+
+                        playlist = 'fear+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
+                    else:
+                        # Surprise: film noir
+                        randomfile = random.choice(
+                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/surprise/"))
+                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/surprise/" + randomfile)
+                        subprocess.call([mp, file])
+
+                        urlhere = 'http://www.imdb.com/search/title?genres=film_noir&title_type=feature&sort=moviemeter, asc'
+                        webbrowser.get(chrome_path).open(urlhere)
+
+                        playlist = 'surprise+songs'
+                        webbrowser.get(chrome_path).open(url+playlist)
 
 
 </body>

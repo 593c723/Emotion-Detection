@@ -5,8 +5,178 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/styles.css') }}">
     <title>Home</title>
+
+    <style>
+        body{
+     background-image: url(../static/bg.jpg);
+}
+.mySlides
+{
+margin-top: 20px;
+}
+#navbar {
+    overflow: hidden;
+    background-color: #010101;
+  }
+
+  /* Style the links inside the navigation bar */
+  #navbar a {
+    float: right;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  /* Change the color of links on hover */
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+.row
+{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.col
+{
+    margin:10px;
+    float:left;
+  margin-bottom: 16px;
+  padding: 10px;
+  width:40%;
+  display: flex;
+  border-radius: 50px;
+   overflow: hidden;
+
+   padding: 40px;
+
+}
+.card {
+
+    float:left;
+    width:50%;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+  padding: 5px;
+}
+.capt {
+    float:left;
+    width:50%;
+  padding: 0 16px;
+  color: #ffffff;
+}
+.cont::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    margin: 0;
+    border-radius: 100px;
+  }
+  .search button {
+    margin: 0;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  .search button:hover {
+    background: #ccc;
+  }
+.search
+{
+    margin:20px;
+    text-align: center;
+    overflow: hidden;
+}
+.abt
+{
+    text-align: center;
+    color:aliceblue;
+    line-height: 1.5;
+    padding:20px;
+    margin: 40px;
+    border-radius: 50px;
+}
+footer{
+    color:aliceblue;
+
+
+}
+footer, #navbar, .abt, .col{
+background: rgba(255, 255, 255, 0.10);
+   backdrop-filter: blur(2px);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   border-right-color: rgba(255, 255, 255, 0.1);
+   border-bottom-color: rgba(255, 255, 255, 0.1);
+   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+.contact
+{
+  border-top: 1px solid grey;
+    float:left;
+    width:50%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.med
+{
+  border-top: 1px solid grey;
+    float:left;
+    width:50%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+
+.scroll-up {
+    position: fixed;
+    right:1%;
+    bottom: 3%;
+    cursor:pointer;
+  }
+  .up-arrow {
+    width: 3rem;
+    height: 3rem;
+  }
+  .fa-edit
+  {
+    position: fixed;
+    right:1%;
+    bottom: 12%;
+    cursor:pointer;
+  }
+
+.about
+{
+  float: left;
+  color: #ddd;
+  text-align: center;
+  margin:auto;
+  border-top: 5px solid grey;
+  display:flex;
+}
+.abtext
+{
+  text-align: center;
+  padding: 100px;
+}
+.abtimg
+{
+  padding: 50px;
+}
+    </style>
 </head>
 
 
@@ -22,7 +192,7 @@
 
 
       <div class="w3-content w3-section"></div>
-                     <img class="mySlides" src='../static/img1.jpg' style="width:100%;height:500px; object-fit:cover;">
+                     <img class="mySlides" src='../static/img4.jpg' style="width:100%;height:500px; object-fit:cover;">
                         <img class="mySlides" src="../static/img2.jpg" style="width:100%;height:500px; object-fit:cover;">
                      <img class="mySlides" src="../static/img3.jpg" style="width:100%;height:500px; object-fit:cover;">
 
@@ -41,14 +211,14 @@
  <h2>No Typing Required, Enjoy a Hands Free Experience</h2>
 </div>
 <div class="abtimg">
- <img  src='../static/img4.jpg' style="max-width: 500px;height:auto;object-fit: cover;">
+ <img  src='../static/img1.jpg' style="width: 500px;height:auto;object-fit: cover;">
 </div>
 </div>
 
 
 <div class="about">
  <div class="abtimg">
-    <img src="../static/img4.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
+    <img src="../static/img4.jpg" style="width: 500px;height:auto;object-fit: cover;">
    </div>
  <div class="abtext">
 <h1>Vibe To Music</h1><br>
@@ -65,7 +235,7 @@
 <h2> Tune in to music or let us take you to the most popular youtube playlists</h2>
 </div>
 <div class="abtimg">
-<img src="../static/img4.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
+<img src="../static/img4.jpg" style="width: 500px;height:auto;object-fit: cover;">
 </div>
 </div>
 
@@ -73,7 +243,7 @@
 
 <div class="about">
 <div class="abtimg">
-<img src="../static/img4.jpg" style="max-width: 500px;height:auto;object-fit: cover;">
+<img src="../static/img4.jpg" style="width: 500px;height:auto;object-fit: cover;">
 </div>
 <div class="abtext">
 <h1>Let Us Be There For You </h1><br>

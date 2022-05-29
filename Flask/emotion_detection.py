@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template, Response, request, jsonify
 import tensorflow as tf
 import cv2
 import numpy as np
@@ -10,6 +10,11 @@ from scipy import stats
 import time
 import os, random
 import subprocess
+import re
+import requests as HTTP
+import tkinter as tk
+from tkinter import messagebox
+from tkinter import ttk
 
 app = Flask(__name__, template_folder='./templates')
 
@@ -17,6 +22,7 @@ camera = cv2.VideoCapture(0)
 face_haar_cascade = cv2.CascadeClassifier('../Model/haarcascade_frontalface_default.xml')
 model = tf.keras.models.load_model('../Model/model_csv.h5')
 label_dict = {0 : 'Angry', 1 : 'Disgust', 2 : 'Fear', 3 : 'Happiness', 4 : 'Sad', 5 : 'Surprise', 6 : 'Neutral'}
+
 global capture
 capture=0
 url = 'https://www.youtube.com/results?search_query='
@@ -24,7 +30,7 @@ chrome_path = "C:/Program Files/Google/Chrome/Application/chrome.exe %s"
 playlist = ''
 
 now = time.time()
-future=now+10
+
 
 def gen_frames():
     global capture
@@ -54,71 +60,91 @@ def gen_frames():
                 break
             test_1 = np.array(final_pred)
             mode = stats.mode(test_1)
+
         if success: 
             if(capture):
                 capture=0
-                if time.time() > future:
-                    mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
-                    if mode[0][0] == 'Neutral':
-                        randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                if time.time():
 
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                    def music():
+                        mp = 'C:/Program Files (x86)/Windows Media Player/wmplayer.exe'
+                        if mode[0][0]== 'Neutral' :
+                            randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                            file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+
+                        elif mode[0][0] == 'Happiness':
+                            randomfile = random.choice(
+                                os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/"))
+                            file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/" + randomfile)
+
+                        elif mode[0][0] == 'Angry':
+                            randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/angry/"))
+                            file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/angry/" + randomfile)
+                        elif mode[0][0] == 'Sad':
+                            randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/sad/"))
+                            file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/sad/" + randomfile)
+                        elif mode[0][0] == 'Disgust':
+                            randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/"))
+                            file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/" + randomfile)
+                        elif mode[0][0] == 'Fear':
+                            randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
+                            file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
+                        else:
+                            # Surprise: film noir
+                            randomfile = random.choice(os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/surprise/"))
+                            file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/surprise/" + randomfile)
+
+
                         subprocess.call([mp, file])
+                    def play():
+                        if mode[0][0] == 'Neutral':
+                            playlist = 'neutral+songs playlist'
+                        elif mode[0][0] == 'Happiness':
+                            playlist = 'Happy+songs playlist'
+                        elif mode[0][0] == 'Angry':
+                            playlist = 'Angry+songs playlist'
+                        elif mode[0][0] == 'Sad':
+                            playlist = 'Sad+songs playlist'
+                        elif mode[0][0] == 'Disgust':
+                            playlist = 'Cute+songs playlist'
+                        elif mode[0][0] == 'Fear':
+                            playlist = 'Scary+songs playlist'
+                        else:
+                            playlist = 'soothing+songs playlist'
 
-                        playlist = 'neutral+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-                    elif mode[0][0] == 'Happiness':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/" + randomfile)
-                        subprocess.call([mp, file])
-
-                        playlist = 'happy+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-                    elif mode[0][0] == 'Angry':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/angry/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/angry/" + randomfile)
-                        subprocess.call([mp, file])
-
-
-                        playlist = 'angry+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-                    elif mode[0][0] == 'Sad':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/sad/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/sad/" + randomfile)
-                        subprocess.call([mp, file])
-
-                        playlist = 'sad+songs playlist'
                         webbrowser.get(chrome_path).open(url + playlist)
 
+                    def movie():
+                        if mode[0][0] == 'Neutral':
+                            urlhere = 'http://www.imdb.com/search/title?genres=thriller&title_type=feature&sort=moviemeter, asc'
 
+                        elif mode[0][0] == 'Happiness':
+                            urlhere = 'http://www.imdb.com/search/title?genres=thriller&title_type=feature&sort=moviemeter, asc'
+                        elif mode[0][0] == 'Angry':
+                            urlhere = 'http://www.imdb.com/search/title?genres=family&title_type=feature&sort=moviemeter, asc'
+                        elif mode[0][0] == 'Sad':
+                            urlhere = 'http://www.imdb.com/search/title?genres=drama&title_type=feature&sort=moviemeter, asc'
+                        elif mode[0][0] == 'Disgust':
+                            urlhere = 'http://www.imdb.com/search/title?genres=musical&title_type=feature&sort=moviemeter, asc'
+                        elif mode[0][0] == 'Fear':
+                            urlhere = 'http://www.imdb.com/search/title?genres=sport&title_type=feature&sort=moviemeter, asc'
+                        else:
+                            urlhere = 'http://www.imdb.com/search/title?genres=film_noir&title_type=feature&sort=moviemeter, asc'
 
-                    elif mode[0][0] == 'Disgust':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/happy/" + randomfile)
-                        subprocess.call([mp, file])
+                        webbrowser.get(chrome_path).open(urlhere)
+############################################################################################################################
+                    @app.route('/playlist')
+                    def playlist():
+                        play()
 
-                        playlist = 'disgust+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-                    elif mode[0][0] == 'Fear':
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/neutral/" + randomfile)
-                        subprocess.call([mp, file])
+                    @app.route('/mov')
+                    def mov():
+                        movie()
 
-                        playlist = 'fear+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
-                    else:
-                        randomfile = random.choice(
-                            os.listdir("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/surprise/"))
-                        file = ("C:/Users/sumana/PycharmProjects/Emotion-Detection/Flask/songs/surprise/" + randomfile)
-                        subprocess.call([mp, file])
+                    @app.route('/songs')
+                    def songs():
+                        music()
 
-                        playlist = 'surprise+songs'
-                        webbrowser.get(chrome_path).open(url+playlist)
             try:
                 
                 ret, buffer = cv2.imencode('.jpg', frame)
@@ -139,6 +165,8 @@ def home():
 @app.route('/index')
 def index():
     return render_template('index.html')
+
+
 
 
 @app.route('/face_detection')
