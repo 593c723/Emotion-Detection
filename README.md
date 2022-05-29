@@ -1,20 +1,25 @@
 Abstract:
+
 With the advancement in technology, it is only natural that techniques like Artificial intelligence and machine learning be applied to make life easier. One such instance is this project with Emotion recognition via face detection embedded in a smart recommendation system that suggests music, movies and playlists according to the users mood. A field with a lot of scope and future work possible, this Smart entertainment recommendation system has been built as a web application.
 Oftentimes, it so happens that a person just wants to sit back and enjoy some music or watch a movie. Sometimes, said person might not even be aware of what it is exactly that they want, only that their mood is off and that they would really like some entertainment. Sometimes, one might not even know what to watch, and would like to be surprised with a random suggestion. Emote is a web application that does just that. Through smart recognition of emotions, Emote suggests various entertainment choices for the user in a hands-free environment.
 
 INTRODUCTION
+
 Emote is a webapp that recommends music according to the mood of the user using facial detection and emotion recognition. This project was built as a part of the Microsoft Mentor Engage Program and falls under the first problem set of Facial Recognition. This implements a machine learning model for emotion detection that is implemented over the facial detection module.
 
 MOTIVATION
+
 ❄️ Nowadays we have so many websites that categorize movies based on their successful ratings, actors who have worked on it, their box office collections and so on and also categorise songs based on the users previou choices.
 ❄️ People watch movies or listen to songs so that they can relate to the feel of it , to relieve themselves etc..
 ❄️ But there are hardly any websites which recommend movies/songs based on user's current emotions.
 ❄️ The proposed entertainment system eliminates the time-consuming and tedious task of manually Segregating or grouping movies/songs into different lists and helps in generating an appropriate movie/song list based on an individual's emotional features.
 
 
-Objectives:
+OBJECTIVES:
 To create a web based application that recognises a users mood and recommends entertainment in the form of music, videos and movies.
-Motivation
+
+
+MOTIVATION
 Emote has been developed using many machine learning algorithms including convolution neural networks (CNN) for a facial expression recognition task. The goal is to classify each facial image into one of the seven facial emotion categories considered in this study- Happy, Angry, Sad, Surprised, Disgusted, Neutral, Scared.  CNN models are trained with different depth using gray-scale images from the Kaggle website. This model can be trained in any python development environment. Visualization of different layers of a network is presented to show what features of a face can be learned by CNN models. This trained model is then passed into the main program which identifies the emotion in a live video stream input from the webcam and suggests corresponding entertainment options.
 USER CHARACTERISTICS AND EXPECTATIONS:
 Users should be internet literate and should be able to navigate the web.
@@ -27,6 +32,7 @@ Face detection and Emotion Recognition via live stream
 Options to choose movie/ music/ playlist
 
 NON-FUNCTIONAL REQUIREMENTS:
+
 1)Usability:
 Users should be able to easily navigate the application, find the login icon easily and should also be able to figure out how to navigate to the web live streaming page
 Scroll to top must be available from all parts of the page
@@ -58,6 +64,7 @@ HARDWARE REQUIREMENTS:
 Webcam connected to the device
 
 SOFTWARE REQUIREMENTS:
+
 1. HTML
 1.1. HyperText Markup Language is the standard markup language used for structuring documents which are to be displayed via a web browser or equivalent software frameworks like Electron.
 2. CSS
@@ -74,7 +81,7 @@ SOFTWARE REQUIREMENTS:
 10.GitHub
 GitHub code hosting platform for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.
 
-IMPLEMENTATION/ RUNNING THE PROGRAM:
+**IMPLEMENTATION/ RUNNING THE PROGRAM:**
 
 TRAINING THE EMOTION RECOGNITION MODEL:
 This can be done by navigating to the “Model” directory and running emorecog.py.
