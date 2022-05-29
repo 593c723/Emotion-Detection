@@ -53,19 +53,27 @@ SYSTEM REQUIREMENTS
 
 1)2BASIC REQUIREMENTS
 1.1. Stable Internet Connection
+
 1.2. A working web browser supporting JavaScript and Stylesheets.
 
 2)OPERATING SYSTEM
 2.1. Microsoft Windows 8/9/10/11
+
 2.2. Mac OS X 10.10 or higher
+
 2.3. iOS 6 or higher
+
 2.4. Android 6 or higher
+
 
 3. BROWSER REQUIREMENTS
 (The latest recommended OS for the relative operating system)
 3.1. Firefox 
+
 3.2. Google Chrome 
+
 3.3. Microsoft Edge 
+
 
 HARDWARE REQUIREMENTS:
 
@@ -76,17 +84,26 @@ SOFTWARE REQUIREMENTS:
 
 1. HTML
 1.1. HyperText Markup Language is the standard markup language used for structuring documents which are to be displayed via a web browser or equivalent software frameworks like Electron.
+
 2. CSS
 2.1. Cascading Style Sheets is a styling language for adding styles such as background color, text sizing, fonts to web documents.
+
 3. JavaScript
 3.1. JavaScript is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. It is used to develop the logic for front end applications. Since the inception of nodejs, the language can also be used for server side programming.
+
 4.Python interpreter
+
 5. Development environment that supports python like pycharm, jupyter notebooks, vs code
+
 6.Flask
+
 7.Ajax
+
 8.Bootstrap
+
 9. Git - Version Control System
  Git is a free and open source distributed version control system. It is used for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development.
+
 10.GitHub
 GitHub code hosting platform for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.
 
@@ -95,42 +112,70 @@ GitHub code hosting platform for software development and version control using 
 TRAINING THE EMOTION RECOGNITION MODEL:
 
 This can be done by navigating to the “Model” directory and running emorecog.py.
+
 The pre-run output of the training is available in model_csv.h5 in the same directory.
 
 This output will be passed into the main program- emotion_detection.py
+
 Emotion_detection.py holds the program for the flask template and also for accessing the webcam, classifying the emotions and displaying the corresponding output.
+
 This is the main file that requires to be run for the recommendation system web app.
+
 This requires the user to import various python modules and install dependencies accordingly.
+
 If working in an environment like pycharm, install the required libraries in the local interpreter and import the modules.
+
 This can be generally done by the command: pip install -r requirements.txt
 
 If there is still some error thrown by virtue of the modules not being recognised, import the libraries manually with “pip install”
+
 Run the python file and navigate to http://127.0.0.1:5000 on the browser to open the flask user interface.
+
 Before running the program make sure that all the local paths have been changed to the path on your device.
+
 
 Installations
 
 Follow steps to use this project:
+
 1)Clone repository
+
 git clone https://github.com/593c723/Emotion-Detection.git
+
 2)Change directory to clone repository
+
 cd Emotion-Detection
+
 3)Create a Python virtual environment and activate it
+
 $ virtualenv venv
+
 $ source venv/bin/activate      # For Linux
+
 $ venv\Scripts\activate         # For Windows
+
 4)Install required libraries
+
 pip install -r requirements.txt
+
 5)Getting Started
+
 Change directory and Run File
+
 cd Flask
+
 python emotion_detection.py
+
 
 FEATURES:
 
 Emotional Detection Model use Deep Neural Network with CNN architecture model for Image Classification.
+
 Tensorflow-Keras Convolutional Neural Network with multiple layers is used to train and test model for seven classes - Happy, Angry, Neutral, Sad, Surprise, Fear and Disgust.
+
 Emotional Detection Model integrated with OpenCV to capture user facial expression.
+
 Recommendations based on detected mood is done via 3 functions.
+
 Engaging UI is developed using Flask Web Application
 
