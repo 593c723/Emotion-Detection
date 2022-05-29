@@ -19,10 +19,13 @@ OBJECTIVES:
 To create a web based application that recognises a users mood and recommends entertainment in the form of music, videos and movies.
 
 
-MOTIVATION
+METHODOLOGY
 
 Emote has been developed using many machine learning algorithms including convolution neural networks (CNN) for a facial expression recognition task. The goal is to classify each facial image into one of the seven facial emotion categories considered in this study- Happy, Angry, Sad, Surprised, Disgusted, Neutral, Scared.  CNN models are trained with different depth using gray-scale images from the Kaggle website. This model can be trained in any python development environment. Visualization of different layers of a network is presented to show what features of a face can be learned by CNN models. This trained model is then passed into the main program which identifies the emotion in a live video stream input from the webcam and suggests corresponding entertainment options.
+
+
 USER CHARACTERISTICS AND EXPECTATIONS:
+
 Users should be internet literate and should be able to navigate the web.
 To run application in a development environment, users should have basic knowledge of python, working with importing libraries and basic web development knowledge to parse through the user interface design.
 
