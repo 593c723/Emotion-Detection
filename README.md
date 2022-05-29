@@ -107,7 +107,10 @@ SOFTWARE REQUIREMENTS:
 10.GitHub
 GitHub code hosting platform for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.
 
-**IMPLEMENTATION/ RUNNING THE PROGRAM:**
+
+
+
+																										            **IMPLEMENTATION/ RUNNING THE PROGRAM:**
 
 TRAINING THE EMOTION RECOGNITION MODEL:
 
