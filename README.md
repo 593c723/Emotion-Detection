@@ -109,65 +109,64 @@ GitHub code hosting platform for software development and version control using 
 
 
 
+	IMPLEMENTATION/ RUNNING THE PROJECT
 
-																										            **IMPLEMENTATION/ RUNNING THE PROGRAM:**
+	TRAINING THE EMOTION RECOGNITION MODEL:
 
-TRAINING THE EMOTION RECOGNITION MODEL:
+	This can be done by navigating to the “Model” directory and running emorecog.py.
 
-This can be done by navigating to the “Model” directory and running emorecog.py.
+	The pre-run output of the training is available in model_csv.h5 in the same directory.
 
-The pre-run output of the training is available in model_csv.h5 in the same directory.
+	This output will be passed into the main program- emotion_detection.py
 
-This output will be passed into the main program- emotion_detection.py
+	Emotion_detection.py holds the program for the flask template and also for accessing the webcam, classifying the emotions and displaying the corresponding output.
 
-Emotion_detection.py holds the program for the flask template and also for accessing the webcam, classifying the emotions and displaying the corresponding output.
+	This is the main file that requires to be run for the recommendation system web app.
 
-This is the main file that requires to be run for the recommendation system web app.
+	This requires the user to import various python modules and install dependencies accordingly.
 
-This requires the user to import various python modules and install dependencies accordingly.
+	If working in an environment like pycharm, install the required libraries in the local interpreter and import the modules.
 
-If working in an environment like pycharm, install the required libraries in the local interpreter and import the modules.
+	This can be generally done by the command: pip install -r requirements.txt
 
-This can be generally done by the command: pip install -r requirements.txt
+	If there is still some error thrown by virtue of the modules not being recognised, import the libraries manually with “pip install”
 
-If there is still some error thrown by virtue of the modules not being recognised, import the libraries manually with “pip install”
+	Run the python file and navigate to http://127.0.0.1:5000 on the browser to open the flask user interface.
 
-Run the python file and navigate to http://127.0.0.1:5000 on the browser to open the flask user interface.
-
-Before running the program make sure that all the local paths have been changed to the path on your device.
+	Before running the program make sure that all the local paths have been changed to the path on your device.
 
 
-Installations
+	Installations
 
-Follow steps to use this project:
+	Follow steps to use this project:
 
-1)Clone repository
+	1)Clone repository
 
-git clone https://github.com/593c723/Emotion-Detection.git
+	git clone https://github.com/593c723/Emotion-Detection.git
 
-2)Change directory to clone repository
+	2)Change directory to clone repository
 
-cd Emotion-Detection
+	cd Emotion-Detection
 
-3)Create a Python virtual environment and activate it
+	3)Create a Python virtual environment and activate it
 
-$ virtualenv venv
+	$ virtualenv venv
 
-$ source venv/bin/activate      # For Linux
+	$ source venv/bin/activate      # For Linux
 
-$ venv\Scripts\activate         # For Windows
+	$ venv\Scripts\activate         # For Windows
 
-4)Install required libraries
+	4)Install required libraries
 
-pip install -r requirements.txt
+	pip install -r requirements.txt
 
-5)Getting Started
+	5)Getting Started
 
-Change directory and Run File
+	Change directory and Run File
 
-cd Flask
+	cd Flask
 
-python emotion_detection.py
+	python emotion_detection.py
 
 
 FEATURES:
